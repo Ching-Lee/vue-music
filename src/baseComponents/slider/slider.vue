@@ -59,6 +59,9 @@ export default{
       this.slider.refresh()
     })
   },
+  destroyed () {
+    clearTimeout(this.timer)
+  },
   methods: {
     // 设置ul的宽度
     _setSliderGroupWidth (isResize) {

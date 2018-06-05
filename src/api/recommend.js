@@ -1,5 +1,7 @@
 import jsonp from '../assets/js/jsonp'
 import {commonParams, options} from './config'
+
+// 获取推荐页面轮播图数据
 export function getRecommend () {
   const url = 'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'
   // 实现将多个对象拷贝到同一个对象中
