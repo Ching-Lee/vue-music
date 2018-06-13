@@ -14,10 +14,9 @@ export default function jsonp (url, param, option) {
     })
   })
 }
+
 // 将param对象转成url后面的请求参数
-/**
- * @return {string}
- */
+
 function ParamToUrl (param) {
   let url = ''
   // 通过遍历拿到param对象的值，拼接key=value的请求串

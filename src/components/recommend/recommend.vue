@@ -10,8 +10,8 @@
       </slider>
     </div>
     <div v-if="hotSongList.length" class="recommend-song">
-      <song-list v-bind:list="hotSongList" title="热门歌单"></song-list>
-    </div>
+       <song-list v-bind:hotSonglist="hotSongList" title="热门歌单"></song-list>
+     </div>
   </div>
 </template>
 

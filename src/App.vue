@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <main-header></main-header>
-    <tab></tab>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+    <div class="header">
+      <main-header></main-header>
+      <tab></tab>
+    </div>
+    <div class="content">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
@@ -27,4 +31,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+.header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+  .content{
+    margin-top:94px;
+  }
+
 </style>

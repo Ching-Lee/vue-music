@@ -2,7 +2,7 @@
   <div>
     <h1 class="list-title">{{title}}</h1>
     <ul>
-      <li v-for="item in list" v-bind:key="item.id" class="recommend_item">
+      <li v-for="item in hotSonglist" v-bind:key="item.id" class="recommend_item">
         <div class="card">
           <div class="icon">
             <i class="icon-earphone"> {{getAccessNum(item.accessnum)}}万</i>
@@ -22,8 +22,14 @@
 <script type="text/ecmascript-6">
 export default {
   props: {
-    title: '',
-    list: []
+    title: {
+      type: String,
+      default: ''
+    },
+    hotSonglist: {
+      type: Array,
+      default: null
+    }
   },
   methods: {
     getAccessNum (num) {
@@ -40,6 +46,7 @@ export default {
     width: 50%;
     display: inline-block;
     margin-bottom: 1rem;
+    vertical-align: top;
   }
   .card{
     width: 95%;
@@ -61,7 +68,7 @@ export default {
     margin-top: 0.5rem;
   }
   .list-title{
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     font-weight: bold;
   }
   .card .icon{
