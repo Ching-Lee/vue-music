@@ -2,16 +2,16 @@
   <div>
     <h1 class="list-title">{{title}}</h1>
     <ul>
-      <li v-for="item in hotSonglist" v-bind:key="item.id" class="recommend_item">
+      <li v-for="item in hotSonglist" v-bind:key="item.content_id" class="recommend_item">
         <div class="card">
           <div class="icon">
-            <i class="icon-earphone"> {{getAccessNum(item.accessnum)}}万</i>
-            <img width="100%" v-bind:src="item.picUrl">
+            <i class="icon-earphone"> {{getAccessNum(item.listen_num)}}万</i>
+            <img v-bind:src="getimgsrc(item.cover)" width="100%">
             <i class="icon-player"></i>
           </div>
           <div class="describe">
-            <p class="songListDesc">{{item.songListDesc}}</p>
-            <p class="songListAuthor">{{item.songListAuthor}}</p>
+            <p class="songListDesc">{{item.title}}</p>
+            <p class="songListAuthor">{{item.username}}</p>
           </div>
         </div>
       </li>
@@ -35,6 +35,9 @@ export default {
     getAccessNum (num) {
       num = num / 10000
       return num.toFixed(2)
+    },
+    getimgsrc (src) {
+      return src.replace(/600/, '300')
     }
   }
 }

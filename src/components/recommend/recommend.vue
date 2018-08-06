@@ -16,7 +16,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import {getRecommend} from '../../api/recommend'
+import {getRecommend, getrecomPlaylist} from '../../api/recommend'
 import {ERR_OK} from '../../api/config'
 import Slider from '../../baseComponents/slider/slider.vue'
 import Songlist from './songlist.vue'
@@ -40,7 +40,11 @@ export default {
       getRecommend().then((result) => {
         if (result.code === ERR_OK) {
           this.sliderData = result.data.slider
-          this.hotSongList = result.data.songList
+        }
+      })
+      getrecomPlaylist().then((result) => {
+        if (result.code === ERR_OK) {
+          this.hotSongList = result.recomPlaylist.data.v_hot.slice(0, 6)
         }
       })
     }

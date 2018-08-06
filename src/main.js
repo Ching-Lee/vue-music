@@ -6,6 +6,7 @@ import fastclick from 'fastclick'
 import VueLazyLoad from 'vue-lazyload'
 import IScrollView from 'vue-iscroll-view'
 import IScroll from 'iscroll'
+import store from './store'
 fastclick.attach(document.body)
 
 Vue.config.productionTip = false
@@ -19,6 +20,7 @@ Vue.use(IScrollView, IScroll)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   render: h => h(App)
 })

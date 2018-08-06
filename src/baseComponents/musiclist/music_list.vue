@@ -1,7 +1,7 @@
 <template>
-  <iscroll-view ref='scrollView' class='scroll_view' @pullUp="pullUp" @pullDown="pullDown"  :options="{preventDefault: true}">
+  <iscroll-view ref='scrollView' class='scroll_view' @pullUp="pullUp"  :options="{preventDefault: true}">
     <ul class="music_list">
-      <li v-for="(item, index) in list" v-bind:key="index">
+      <li @click=selectMusic(item,index) v-for="(item, index) in list" v-bind:key="index">
         <h2>{{item.musicData.songname}}</h2>
         <p>{{item.musicData.singer[0].name}}   {{item.musicData.albumdesc}}</p>
       </li>
@@ -42,11 +42,11 @@ export default {
     dispachload () {
       this.$emit('loadmore')
     },
-    /* pullDown () {
-      console.log('pullDown')
-    }, */
     pullUp () {
       this.dispachload()
+    },
+    selectMusic (item, index) {
+      this.$emit('selectMusic', item, index)
     }
   }
 }

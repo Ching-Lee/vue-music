@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="bottom_detail">
-      <div class="button">
+      <div class="button" v-on:click="_dispachPlay()">
         <i class="icon-player"></i>
         <span>播放全部</span>
       </div>
@@ -50,6 +50,9 @@ export default {
     },
     _dispachAlert () {
       this.$emit('alert')
+    },
+    _dispachPlay () {
+      this.$emit('musicplay')
     }
   }
 }

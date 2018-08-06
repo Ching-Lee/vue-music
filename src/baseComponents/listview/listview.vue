@@ -82,8 +82,13 @@ export default {
           if (currentli) {
             if (titleTop >= _self.headerHeight && titleTop <= document.documentElement.clientHeight) {
               currentli.style.color = 'white'
-            } else {
-              currentli.style.color = 'black'
+              if (_self.quicknavlist[index - 1].style.color === 'white') {
+                _self.quicknavlist[index - 1].style.color = 'black'
+              }
+              if (_self.quicknavlist[index + 1].style.color === 'white') {
+                _self.quicknavlist[index + 1].style.color = 'black'
+              }
+              break
             }
           }
         }

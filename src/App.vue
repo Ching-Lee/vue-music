@@ -9,16 +9,19 @@
         <router-view></router-view>
       </keep-alive>
     </div>
+    <player></player>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import MHeader from './components/m_header/m_header.vue'
 import Tab from './components/tab/tab.vue'
+import Player from './components/player/player.vue'
 export default {
   components: {
     'main-header': MHeader,
-    'tab': Tab
+    'tab': Tab,
+    'player': Player
   }
 }
 </script>
